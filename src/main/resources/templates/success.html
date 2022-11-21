@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  	
+  	<button type="button" onclick="myFunction()">Try it</button>
+  	<a href="localhost:8080/login">Visit W3Schools.com!</a>
+  	
+	<script src="index.js"></script>
+	<script>
+	function myFunction() {
+		var heading = document.createElement("h1");
+		var newpin = Math.ceil(Math.random()*10000);
+		heading.innerText = newpin;
+		document.body.appendChild(heading);
+	}
+</script>
+  </body>
+</html>
