@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-  	
-  	<button type="button" onclick="myFunction()">Try it</button>
-  	<a href="localhost:8080/login">Visit W3Schools.com!</a>
+  	<h1 th:text="${userData.name}"></h1>
+  	<button type="button" onclick="myFunction()">click to generate your pin</button>
+  	<a target= "_blank" href="./login">Visit W3Schools.com!</a>
   	
 	<script src="index.js"></script>
 	<script>
