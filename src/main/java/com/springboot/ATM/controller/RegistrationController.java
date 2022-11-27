@@ -1,5 +1,6 @@
 package com.springboot.ATM.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import com.springboot.ATM.model.UserData;
 @Controller
 public class RegistrationController {
 	
+	@Autowired
 	registrationRepository user;
 	
 	@GetMapping("/")

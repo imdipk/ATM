@@ -8,18 +8,21 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-  	<h1 th:text="${userData}"></h1>
-  	<button type="button" onclick="myFunction()">click to generate your pin</button>
-  	<a target= "_blank" href="./login">Visit W3Schools.com!</a>
+  	<h1 th:text="${userData.name}"></h1>
+  	<button type="button" onclick="myFunction()">click to generate  pin</button>
+  	<a target= "_blank" href="./login">Click here to login to your bank</a>
   	
 	<script src="index.js"></script>
 	<script>
 	function myFunction() {
 		var heading = document.createElement("h1");
 		var newpin = Math.floor(Math.random() * 9000 + 1000);
-		heading.innerText = newpin;
+		heading.innerText = newpin ;
 		document.body.appendChild(heading);
+		
 	}
+	
+	
 </script>
   </body>
 </html>
