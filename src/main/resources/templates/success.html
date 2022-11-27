@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-  	<h1 th:text="${userData.name}"></h1>
+  	<h1 th:text="${userData}"></h1>
   	<button type="button" onclick="myFunction()">click to generate your pin</button>
   	<a target= "_blank" href="./login">Visit W3Schools.com!</a>
   	
@@ -16,7 +16,7 @@
 	<script>
 	function myFunction() {
 		var heading = document.createElement("h1");
-		var newpin = Math.ceil(Math.random()*10000);
+		var newpin = Math.floor(Math.random() * 9000 + 1000);
 		heading.innerText = newpin;
 		document.body.appendChild(heading);
 	}
