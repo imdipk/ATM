@@ -11,16 +11,19 @@ import javax.persistence.Table;
 @Table(name = "users")
 public class UserData {
 	
-	
-	private String name;
-	private String fathersName;
-	private String dob;
-	//@Column(nullable = false, unique = true, length = 45)
-	private String email;
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
+	private String name;
+	private String fathersName;
+	private String email;
+	private String dob;
+	//@Column(nullable = false, unique = true, length = 45)
+	
+	
+	
+	
 	private long number;
 	private long password;
 	private String bank;

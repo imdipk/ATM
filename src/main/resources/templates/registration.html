@@ -4,76 +4,216 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>HTML 5 Boilerplate</title>
+<title>Bank Registration</title>
 <link rel="stylesheet" href="style.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  
+}
+
+.flex-r,
+.flex-c {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.flex-c {
+  flex-direction: column;
+}
+.flex-r {
+  flex-direction: row;
+}
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 20px 10px;
+  background: #e5e5e5;
+}
+
+.login-text {
+  background-color: #f6f6f6;
+  max-width: 400px;
+  min-height: 500px;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+.logo img{
+	width: 150px;
+	height: 100px;
+}
+.logo span,
+.logo span i {
+  font-size: 25px;
+  color: #0d8aa7;
+}
+
+.login-text h1 {
+  font-size: 25px;
+}
+.login-text p {
+  font-size: 15px;
+  color: #000000b2;
+}
+
+form {
+  align-items: flex-start !important;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.input-box {
+  margin: 10px 0px;
+  width: 100%;
+}
+.label {
+  font-size: 15px;
+  color: black;
+  margin-bottom: 3px;
+}
+.input {
+  background-color: #f6f6f6;
+  padding: 0px 5px;
+  border: 2px solid rgba(216, 216, 216, 1);
+  border-radius: 10px;
+  overflow: hidden;
+  justify-content: flex-start;
+}
+
+input {
+  border: none;
+  outline: none;
+  padding: 10px 5px;
+  background-color: #f6f6f6;
+  flex: 1;
+}
+.input i {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.check span {
+  color: #000000b2;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.btn {
+  color: #ffffff;
+  border-radius: 30px;
+  padding: 10px 15px;
+  background: linear-gradient(122.33deg, #68bed1 30.62%, #1e94e9 100%);
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  transition: all 0.3s linear;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+.extra-line {
+  font-size: 15px;
+  font-weight: 600;
+}
+.extra-line a {
+  color: #0095b6;
+}
+
+</style>
 </head>
 <body>
 
-	<form method = "post" th:action="@{/process}" th:object="${userData}">
-		<div class="row mb-3">
-			<label for="inputEmail3" class="col-sm-2 col-form-label">Full Name</label>
-			<div class="col-sm-10">
-				<input type="text"  name ="name" class="form-control" id="inputEmail2">
+
+	<div class=" flex-r container">
+		<div class="flex-r login-wrapper">
+		  <div class="login-text">
+			<div class="logo">
+			  <img src="https://www.logo.wine/a/logo/Genpact/Genpact-Logo.wine.svg" alt="">
 			</div>
-		</div>
-		<div class="row mb-3">
-			<label for="inputEmail3" class="col-sm-2 col-form-label">Father's Name</label>
-			<div class="col-sm-10">
-				<input type="text"  name ="fathersName" class="form-control" id="inputEmail1">
-			</div>
-		</div>
-		
-		<div class="row mb-3">
-			<label for="inputEmail3" class="col-sm-2 col-form-label">Date of Birth</label>
-			<div class="col-sm-10">
-				<input type="date"  name ="dob" class="form-control" id="inputEmail3">
-			</div>
-		</div>
-		
-		<div class="row mb-3">
-			<label for="inputEmail3"  class="col-sm-2 col-form-label">Email</label>
-			<div class="col-sm-10">
-				<input type="email" name="email" class="form-control" id="inputEmail3">
-			</div>
-		</div>
-		<div class="row mb-3">
-			<label for="inputEmail3"  class="col-sm-2 col-form-label">Mobile No.</label>
-			<div class="col-sm-10">
-				<input type="number" name="number" class="form-control" id="inputEmail3">
-			</div>
-		</div>
-		<div class="row mb-3">
-			<label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-			<div class="col-sm-10">
-				<input type="password" name="password" class="form-control" id="inputPassword3">
-			</div>
-		</div>
-		<fieldset class="row mb-3">
-			<legend class="col-form-label col-sm-2 pt-0">Bank</legend>
-			<div class="col-sm-10">
-				<div class="form-check">
-					<input name = "bank" class="form-check-input" type="radio" 
-						id="gridRadios1" value="HDFC" checked> <label
-						class="form-check-label" for="gridRadios1"> HDFC </label>
-				</div>
-				<div class="form-check">
-					<input name = "bank" class="form-check-input" type="radio" 
-						id="gridRadios2" value="ICICI"> <label
-						class="form-check-label" for="gridRadios2"> ICICI </label>
-				</div>
-				
-			</div>
-		</fieldset>
-		<div class="row mb-3">
-			<div class="col-sm-10 offset-sm-2">
-				
-			</div>
-		</div>
-		<button type="submit" class="btn btn-primary">Sign Up</button>
-	</form>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+			<h1>Sign Up</h1>
+			<p>It's not long before you embark on this journey! </p>
 	
-	<script src="index.js"></script>
-</body>
-</html>
+			<form class="flex-c" method = "post" th:action="@{/process}" th:object="${userData}">
+			  
+				<div class="input-box">
+					<span class="label">Full Name</span>
+					<div class=" flex-r input">
+					  <input type="text" name="name" placeholder="Your Name">
+					  <!-- <i class="fas fa-at"></i> -->
+					</div>
+				</div>
+
+				<div class="input-box">
+					<span class="label">Father Name</span>
+					<div class=" flex-r input">
+					  <input type="text" name="fathersName" placeholder="Father Name">
+					  <!-- <i class="fas fa-at"></i> -->
+					</div>
+				</div>
+
+				<div class="input-box">
+					<span class="label">Date of Birth</span>
+					<div class=" flex-r input">
+					  <input type="date" name="dob" placeholder="Your Name">
+					  <!-- <i class="fas fa-at"></i> -->
+					</div>
+				</div>
+				
+				<div class="input-box">
+					<span class="label">E-mail</span>
+					<div class=" flex-r input">
+					<input type="email"  name="email" placeholder="name@abc.com">
+					<!-- <i class="fas fa-at"></i> -->
+					</div>
+				</div>
+
+				<div class="input-box">
+					<span class="label">Mobile Number</span>
+					<div class=" flex-r input">
+					  <input type="tel" name="number" placeholder="+ 91">
+					  <!-- <i class="fas fa-at"></i> -->
+					</div>
+				</div>
+				
+	
+			  <div class="input-box">
+				<span class="label">Password</span>
+				<div class="flex-r input">
+				  <input type="password" name ="password" placeholder="8+ (a, A, 1, #)">
+				  <!-- <i class="fas fa-lock"></i> -->
+				</div>
+			  </div>
+
+			  <div class="input-box">
+				<span class="label">Bank</span>
+				<div class=" flex-r input">
+				  <select name="bank" id="">
+					<option value="HDFC">HDFC</option>
+					<option value="ICICI">ICICI</option>
+				  </select>
+				  <!-- <i class="fas fa-at"></i> -->
+				</div>
+			</div>
+	
+			  <input class="btn" type="submit" value="Create an Account">
+			  <span class="extra-line">
+				<span>Already have an account?</span>
+				<a href="login.html">Sign In</a>
+			  </span>
+			</form>
+	
+		  </div>
+		</div>
+	  </div>
